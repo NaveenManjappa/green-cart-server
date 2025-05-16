@@ -16,8 +16,8 @@ try {
 //Get Address : /api/address/get
 export const getAddress = async(req,res) => {
   try {
-    const {userId} = req.body;
-    const { addresses } = await Address.find({userId});
+    const {userId} = req.body;    
+    const addresses = await Address.find({userId});
     return res.json({success:true,addresses})
   } catch (error) {
      console.error(error);
